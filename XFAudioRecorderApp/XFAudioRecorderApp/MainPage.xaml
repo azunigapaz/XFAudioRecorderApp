@@ -10,6 +10,14 @@
 
         <Button Text="Iniciar/Detener Grabación" Clicked="Button_Clicked"/>
 
+        <Entry x:Name="txtDescripcion" Placeholder="Descriopcion del Audio" />
+
+        <Button x:Name="saveAudio" Text="Salvar audio" Clicked="saveAudio_Clicked"/>
+
+        <Button x:Name="btnShowAudioList" Text="Mostrar Audios" Clicked="btnShowAudioList_Clicked"/>
+
+        <Button x:Name="btnSalir" Text="Salir" Clicked="btnSalir_Clicked"/>
+
     </StackLayout>
 
 </ContentPage>

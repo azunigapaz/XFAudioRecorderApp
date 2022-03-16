@@ -5,6 +5,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using AndroidX.Core.Content;
+using Android;
+using AndroidX.Core.App;
+using MediaManager;
 
 namespace XFAudioRecorderApp.Droid
 {
@@ -17,6 +21,13 @@ namespace XFAudioRecorderApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            //add following code to 
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.RecordAudio) != Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.RecordAudio }, 1);
+            }
+            CrossMediaManager.Current.Init(this);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
